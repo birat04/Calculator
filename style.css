@@ -1,3 +1,11 @@
+:root {
+    --primary-bg-color: hsl(25, 75%, 50%);
+    --button-bg-color: black;
+    --button-hover-color: hsl(0, 0%, 40%);
+    --button-active-color: hsl(0, 0%, 50%);
+    --text-color: white;
+}
+
 body {
     margin: 0;
     display: flex;
@@ -5,14 +13,14 @@ body {
     align-items: center;
     height: 100vh;
     background-color: hsl(20, 25%, 77%);
-
 }
 
 #calculator {
     font-family: Arial, sans-serif;
-    background-color: hsl(25, 75%, 50%);
+    background-color: var(--primary-bg-color);
     border-radius: 15px;
-    width: 28%;
+    width: 90%;
+    max-width: 400px;
     margin: 0 auto;
     height: fit-content;
     overflow: hidden;
@@ -24,12 +32,11 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 35px;
-    font-size: 5rem;
-    text-align: left;
+    font-size: 3rem;
+    text-align: right;
     border: none;
     background-color: black;
-    color: white;
-
+    color: var(--text-color);
 }
 
 #keys {
@@ -40,28 +47,42 @@ body {
 }
 
 button {
-    width: 50px;
+    width: 100%;
     height: 50px;
-    border-radius: 50px;
+    border-radius: 10px;
     border: none;
-    background-color: black;
-    color: white;
-    font-size: 3rem;
+    background-color: var(--button-bg-color);
+    color: var(--text-color);
+    font-size: 1.5rem;
     font-weight: bold;
     box-shadow: -8px -8px 15px rgb(0, 0, 30);
     cursor: pointer;
 }
 
 button:hover {
-    background-color: hsl(0, 0%, 40%);
+    background-color: var(--button-hover-color);
 }
 
 button:active {
-    background-color: hsl(0, 0%, 50%);
+    background-color: var(--button-active-color);
 }
 
-@media screen and (max-width:500px) {
-    .calculator {
+button:focus {
+    outline: 2px solid var(--button-active-color);
+}
+
+@media screen and (max-width: 500px) {
+    #calculator {
         width: 100%;
+    }
+
+    #display {
+        font-size: 2rem;
+        padding: 20px;
+    }
+
+    button {
+        height: 40px;
+        font-size: 1.2rem;
     }
 }
