@@ -52,8 +52,14 @@ body {
     scrollbar-width: none; 
 }
 
+
 #display::-webkit-scrollbar {
-    display: none;
+    width: 8px;
+}
+
+#display::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
 }
 
 #keys {
@@ -91,4 +97,44 @@ button:active {
 button:focus {
     outline: none;
     box-shadow: 0 0 0 3px var(--button-active-color);
+}
+
+
+@media screen and (max-width: 500px) {
+    #calculator {
+        width: 100%;
+    }
+
+    #display {
+        font-size: 2rem;
+        padding: 15px 30px;
+    }
+
+    button {
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #display {
+        font-size: 1.8rem;
+        padding: 15px;
+    }
+
+    button {
+        height: 45px;
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    button {
+        font-size: 2rem;
+        height: 70px;
+    }
+
+    #display {
+        font-size: 3rem;
+    }
 }
