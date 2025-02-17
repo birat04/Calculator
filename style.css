@@ -38,19 +38,23 @@ body {
     height: auto;
     margin: 0 auto;
     padding: 20px 35px;
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: right;
     border: none;
     background-color: black;
     color: var(--text-color);
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow-x: auto; 
+    text-overflow: clip; 
     display: flex;
     align-items: center;
-    justify-content: flex-end; 
+    justify-content: flex-end;
+    scrollbar-width: none; 
 }
 
+#display::-webkit-scrollbar {
+    display: none;
+}
 
 #keys {
     display: grid;
@@ -88,5 +92,3 @@ button:focus {
     outline: none;
     box-shadow: 0 0 0 3px var(--button-active-color);
 }
-
-
