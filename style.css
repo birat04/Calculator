@@ -33,17 +33,24 @@ body {
 }
 
 #display {
-    width: 330px;
-    min-height: 90px;
+    width: 100%;
+    min-height: 80px;
+    height: auto;
+    margin: 0 auto;
     padding: 20px 35px;
     font-size: 3rem;
     text-align: right;
     border: none;
     background-color: black;
     color: var(--text-color);
-    border-radius: 10px 10px 0 0;
-    box-shadow: inset 0px -3px 5px var(--shadow-color);
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Show "..." if text is too long */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Ensure text aligns to the right */
 }
+
 
 #keys {
     display: grid;
