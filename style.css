@@ -33,7 +33,7 @@ body {
 }
 
 #display {
-    width: 100%;
+    width: 330px;
     min-height: 90px;
     padding: 20px 35px;
     font-size: 3rem;
