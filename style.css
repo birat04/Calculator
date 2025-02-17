@@ -1,9 +1,10 @@
 :root {
     --primary-bg-color: hsl(25, 75%, 50%);
     --button-bg-color: black;
-    --button-hover-color: hsl(0, 0%, 40%);
-    --button-active-color: hsl(0, 0%, 50%);
+    --button-hover-color: hsl(0, 0%, 50%);
+    --button-active-color: hsl(0, 0%, 60%);
     --text-color: white;
+    --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -12,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: hsl(20, 25%, 77%);
+    background: linear-gradient(135deg, hsl(20, 25%, 80%), hsl(20, 25%, 70%));
 }
 
 #calculator {
@@ -24,52 +25,56 @@ body {
     min-width: 300px;
     margin: 0 auto;
     height: fit-content;
+    box-shadow: 5px 5px 15px var(--shadow-color);
     overflow: hidden;
     position: relative;
-    top: 32px;
+    top: 20px;
+    padding-bottom: 15px;
 }
 
 #display {
     width: 100%;
-    min-height: 80px;
-    height: auto;
-    margin: 0 auto;
+    min-height: 90px;
     padding: 20px 35px;
     font-size: 3rem;
     text-align: right;
     border: none;
     background-color: black;
     color: var(--text-color);
+    border-radius: 10px 10px 0 0;
+    box-shadow: inset 0px -3px 5px var(--shadow-color);
 }
 
 #keys {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
-    padding: 25px;
+    padding: 20px;
 }
 
 button {
     width: 100%;
-    height: 50px;
-    aspect-ratio: 1; 
+    height: 60px;
+    aspect-ratio: 1;
     border-radius: 10px;
     border: none;
-    background-color: var(--button-bg-color);
+    background: var(--button-bg-color);
     color: var(--text-color);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    box-shadow: -8px -8px 15px rgb(0, 0, 30);
+    box-shadow: 2px 2px 10px var(--shadow-color);
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease-in-out;
 }
 
 button:hover {
-    background-color: var(--button-hover-color);
+    background: var(--button-hover-color);
+    transform: translateY(-2px);
 }
 
 button:active {
-    background-color: var(--button-active-color);
+    background: var(--button-active-color);
+    transform: scale(0.98);
 }
 
 button:focus {
@@ -79,28 +84,28 @@ button:focus {
 
 @media screen and (max-width: 500px) {
     #calculator {
-        width: 100%;
+        width: 95%;
     }
 
     #display {
-        font-size: 2rem;
-        padding: 20px;
+        font-size: 2.5rem;
+        padding: 15px 25px;
     }
 
     button {
-        height: 40px;
-        font-size: 1.2rem;
+        height: 50px;
+        font-size: 1.5rem;
     }
 }
 
 @media screen and (max-width: 400px) {
     #display {
-        font-size: 1.5rem;
+        font-size: 2rem;
         padding: 15px;
     }
 
     button {
-        height: 35px;
-        font-size: 1rem;
+        height: 45px;
+        font-size: 1.3rem;
     }
 }
