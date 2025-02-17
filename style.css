@@ -89,30 +89,4 @@ button:focus {
     box-shadow: 0 0 0 3px var(--button-active-color);
 }
 
-@media screen and (max-width: 500px) {
-    #calculator {
-        width: 95%;
-    }
 
-    #display {
-        font-size: 2.5rem;
-        padding: 15px 25px;
-    }
-
-    button {
-        height: 50px;
-        font-size: 1.5rem;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    #display {
-        font-size: 2rem;
-        padding: 15px;
-    }
-
-    button {
-        height: 45px;
-        font-size: 1.3rem;
-    }
-}
