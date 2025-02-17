@@ -43,12 +43,12 @@ body {
     border: none;
     background-color: black;
     color: var(--text-color);
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide overflowing content */
-    text-overflow: ellipsis; /* Show "..." if text is too long */
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Ensure text aligns to the right */
+    justify-content: flex-end; 
 }
 
 
