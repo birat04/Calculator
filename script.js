@@ -1,20 +1,21 @@
 function appendToDisplay(value) {
   const display = document.getElementById('display');
-  display.textContent += value;  
+  display.value += value;  
 }
 
 function clearDisplay() {
   const display = document.getElementById('display');
-  display.textContent = '';  
+  display.value = ''; 
 }
 
 function calculateDisplay() {
   const display = document.getElementById('display');
   try {
-    const result = eval(display.textContent);
-    display.textContent = result;
+    
+    const result = eval(display.value);
+    display.value = result;  
   } catch (error) {
-    display.textContent = 'Error';  
+    display.value = 'Error';  
   }
 }
 
@@ -28,9 +29,9 @@ document.addEventListener('keydown', function(event) {
 
   if (allowedKeys.includes(event.key)) {
     if (event.key === 'Backspace') {
-      display.textContent = display.textContent.slice(0, -1);
+      display.value = display.value.slice(0, -1);  
     } else if (event.key === 'Enter' || event.key === '=') {
-      calculateDisplay();
+      calculateDisplay();  
     } else {
       appendToDisplay(event.key);  
     }
